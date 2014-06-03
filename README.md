@@ -1,0 +1,3 @@
+zshrc
+=====
+My zsh config.
