@@ -119,14 +119,22 @@ api() {
 
 # will run back end
 alias be='node app -w 0'
+
 # will run front end 
 alias fe='node app -w 0 --url http://localhost:4000'
+
+# will run new front end 
+alias nfe='npm start --url=https://localhost:4000'
+
 # will run front end debug
 alias dfe='node-debug app.js -w 0 --url http://localhost:4000'
+
 # will run front end nodemon
 alias mfe='nodemon app.js -w 0 --url http://localhost:4000'
+
 # will open front end and run front end
 alias openfe='open http://localhost:3000 && fe'
+
 # will open back end and run back end
 alias openbe='open http://localhost:4000 && be'
 
