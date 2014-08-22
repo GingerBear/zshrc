@@ -67,6 +67,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+export NODE_PATH=/usr/local/lib/node_modules
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -123,8 +125,11 @@ alias be='node app -w 0'
 # will run front end 
 alias fe='node app -w 0 --url http://localhost:4000'
 
+# will run front end in production mode
+alias fe='NODE_ENV=production node app -w 0 --url http://localhost:4000'
+
 # will run new front end 
-alias nfe='npm start --url=https://localhost:4000'
+alias nfe='npm start --url=http://localhost:4000'
 
 # will run front end debug
 alias dfe='node-debug app.js -w 0 --url http://localhost:4000'
