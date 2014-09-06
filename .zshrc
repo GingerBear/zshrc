@@ -126,7 +126,7 @@ alias be='node app -w 0'
 alias fe='node app -w 0 --url http://localhost:4000'
 
 # will run front end in production mode
-alias fe='NODE_ENV=production node app -w 0 --url http://localhost:4000'
+alias pfe='NODE_ENV=production node app -w 0 --url http://localhost:4000'
 
 # will run new front end 
 alias nfe='npm start --url=http://localhost:4000'
