@@ -20,6 +20,8 @@ alias gd='git diff'
 alias go='git checkout '
 alias gpu='git pull upstream '
 alias gpo='git push origin '
+alias gom='go master && gpu master'
+alias gob='go master && gpu master && go -b '
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -126,7 +128,7 @@ alias be='node app -w 0'
 alias fe='node app -w 0 --url http://localhost:4000'
 
 # will run front end in production mode
-alias pfe='NODE_ENV=production node app -w 0 --url http://localhost:4000'
+alias pfe='NODE_ENV=production node app -w 0 --url=http://localhost:4000'
 
 # will run new front end 
 alias nfe='npm start --url=http://localhost:4000'
