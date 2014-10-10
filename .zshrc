@@ -125,7 +125,7 @@ api() {
 alias be='node app -w 0'
 
 # will run front end 
-alias fe='node app -w 0 --url http://localhost:4000'
+alias fe='node --debug app -w 0 --url http://localhost:4000'
 
 # will run front end in production mode
 alias pfe='NODE_ENV=production node app -w 0 --url=http://localhost:4000'
@@ -133,8 +133,14 @@ alias pfe='NODE_ENV=production node app -w 0 --url=http://localhost:4000'
 # will run new front end 
 alias nfe='npm start --url=http://localhost:4000'
 
-# will run front end debug
+# will run front end in debuger
 alias dfe='node-debug app.js -w 0 --url http://localhost:4000'
+
+# will start node inspector
+alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
+
+# will start node inspector and stop at first line
+alias nib='node-inspector --no-preload --save-live-edit --web-port=8088 --debug-brk'
 
 # will run front end nodemon
 alias mfe='nodemon app.js -w 0 --url http://localhost:4000'
