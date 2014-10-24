@@ -22,6 +22,11 @@ alias gpu='git pull upstream '
 alias gpo='git push origin '
 alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
+alias gdd='git branch -D '
+
+# project shortcut
+alias apif='api famousfootwear'
+alias mf='m famousfootwear'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -122,7 +127,7 @@ api() {
 }
 
 # will run back end
-alias be='node app -w 0'
+alias be='node --debug=5859 app -w 0'
 
 # will run front end 
 alias fe='node --debug app -w 0 --url http://localhost:4000'
