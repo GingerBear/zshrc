@@ -71,7 +71,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export NODE_PATH=/usr/local/lib/node_modules
@@ -133,7 +133,7 @@ alias be='node --debug=5859 app -w 0'
 alias fe='node --debug app -w 0 --url http://localhost:4000'
 
 # will run front end in production mode
-alias pfe='NODE_ENV=production node app -w 0 --url=http://localhost:4000'
+alias pfe='NODE_ENV=production node app -w 1 --url http://localhost:4000 -p 3000'
 
 # will run new front end 
 alias nfe='gulp build && npm start --url=http://localhost:4000'
