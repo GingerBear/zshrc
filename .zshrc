@@ -147,7 +147,7 @@ alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
 alias ni-all='node-inspector --save-live-edit --web-port=8088'
 
 # will start node inspector and stop at first line
-alias nib='node-inspector --no-preload --save-live-edit --web-port=8088 --debug-brk'
+alias qni='node-inspector --no-preload --save-live-edit --web-port=8088 --debug-brk'
 
 # will run front end nodemon
 alias mfe='nodemon app.js -w 0 --url http://localhost:4000'
