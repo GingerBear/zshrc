@@ -24,10 +24,6 @@ alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
 alias gdd='git branch -D '
 
-# project shortcut
-alias apif='api famousfootwear'
-alias mf='m famousfootwear'
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -129,19 +125,22 @@ api() {
 # will run back end
 alias be='node --debug=5859 app -w 0'
 
-# will run front end 
+# will run front end
 alias fe='node --debug app -w 0 --url http://localhost:4000'
 
 # will run front end in production mode
 alias pfe='NODE_ENV=production node app -w 1 --url http://localhost:4000 -p 3000'
 
-# will run new front end 
+# will run new front end
 alias nfe='gulp build && npm start --url=http://localhost:4000'
 
 # will run front end in debuger
 alias dfe='node-debug app.js -w 0 --url http://localhost:4000'
 
-# will start node inspector 
+# will run front end quickly
+alias qfe='npm start --url=http://localhost:4000'
+
+# will start node inspector
 alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
 
 # will start node inspector with no preload
@@ -164,5 +163,6 @@ function server() {
     local port="${1:-8000}"
     open "http://localhost:${port}/" && python -m SimpleHTTPServer "$port"
 }
-# Add flow command to global
+
+# Add facebook flow command to global
 PATH="$PATH:/Users/guanxiongding/Projects/flow/"
