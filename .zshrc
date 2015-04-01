@@ -23,7 +23,7 @@ alias gpo='git push origin '
 alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
 alias gdd='git branch -D '
-alias pr='~/bin/git-open '
+alias gpr='~/bin/git-open '
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
