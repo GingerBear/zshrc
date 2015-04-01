@@ -23,6 +23,7 @@ alias gpo='git push origin '
 alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
 alias gdd='git branch -D '
+alias pr='~/bin/git-open '
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -166,3 +167,7 @@ function server() {
 
 # Add facebook flow command to global
 PATH="$PATH:/Users/guanxiongding/Projects/flow/"
+
+export NVM_DIR="/Users/guanxiongding/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
