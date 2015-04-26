@@ -159,9 +159,13 @@ alias openfe='open http://localhost:3000 && fe'
 # will open back end and run back end
 alias openbe='open http://localhost:4000 && be'
 
-alias e='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+# will run node app
+alias na='node app'
 
-# will sublime text
+# will run node app in production mode
+alias pna='NODE_ENV=production node app'
+
+# will open sublime text
 st() {
     dir=$1
     if [[ -z $dir ]]; then
@@ -179,7 +183,7 @@ function server() {
 # Add facebook flow command to global
 PATH="$PATH:/Users/guanxiongding/Projects/flow/"
 
-# Add path to chrome web driver
+# Add extra file into path
 PATH="$PATH:/Users/guanxiongding/Projects/path/"
 
 
