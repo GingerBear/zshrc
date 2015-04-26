@@ -15,7 +15,7 @@ alias cl="clear"
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
-alias gc='git commit'
+alias gc='git commit -am '
 alias gd='git diff'
 alias go='git checkout '
 alias gpu='git pull upstream '
@@ -159,6 +159,17 @@ alias openfe='open http://localhost:3000 && fe'
 # will open back end and run back end
 alias openbe='open http://localhost:4000 && be'
 
+alias e='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
+# will sublime text
+st() {
+    dir=$1
+    if [[ -z $dir ]]; then
+      dir=.
+    fi
+    /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $dir
+}
+
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
     local port="${1:-8000}"
@@ -167,6 +178,10 @@ function server() {
 
 # Add facebook flow command to global
 PATH="$PATH:/Users/guanxiongding/Projects/flow/"
+
+# Add path to chrome web driver
+PATH="$PATH:/Users/guanxiongding/Projects/path/"
+
 
 export NVM_DIR="/Users/guanxiongding/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
