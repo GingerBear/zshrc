@@ -15,7 +15,8 @@ alias cl="clear"
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
-alias gc='git commit -am '
+alias gl='git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short'
+alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
 alias gpu='git pull upstream '
@@ -62,13 +63,13 @@ alias gpr='~/bin/git-open '
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+# plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export NODE_PATH=/usr/local/lib/node_modules
@@ -136,7 +137,7 @@ alias pfe='NODE_ENV=production node app -w 1 --url http://localhost:4000 -p 3000
 alias nfe='gulp build && npm start --url=http://localhost:4000'
 
 # will run front end in debuger
-alias dfe='node-debug app.js -w 0 --url http://localhost:4000'
+alias dfe='node-debug app.js'
 
 # will run front end quickly
 alias qfe='npm start --url=http://localhost:4000'
@@ -164,6 +165,9 @@ alias na='node app'
 
 # will run node app in production mode
 alias pna='NODE_ENV=production node app'
+
+# check port usage
+alias cp='lsof -i'
 
 # will open sublime text
 st() {
