@@ -15,7 +15,7 @@ alias cl="clear"
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
-alias gl='git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short'
+alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
@@ -25,6 +25,8 @@ alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
 alias gdd='git branch -D '
 alias gpr='~/bin/git-open '
+alias chost='st /private/etc/hosts'
+alias zshrc='st ~/.zshrc'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -143,7 +145,10 @@ alias dfe='node-debug app.js'
 alias qfe='npm start --url=http://localhost:4000'
 
 # will start node inspector
-alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
+# alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
+
+# will start node inspector
+alias ni='node /Users/guanxiongding/Projects/node-inspector/bin/inspector.js --no-preload --save-live-edit --web-port=8088'
 
 # will start node inspector with no preload
 alias ni-all='node-inspector --save-live-edit --web-port=8088'
