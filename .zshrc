@@ -17,6 +17,7 @@ alias ga='git add '
 alias gb='git branch '
 alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
 alias gc='git commit'
+alias gca='git commit -am '
 alias gd='git diff'
 alias go='git checkout '
 alias gpu='git pull upstream '
@@ -145,10 +146,10 @@ alias dfe='node-debug app.js'
 alias qfe='npm start --url=http://localhost:4000'
 
 # will start node inspector
-# alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
+alias node-inspector='node /Users/guanxiongding/Projects/node-inspector/bin/inspector.js'
 
 # will start node inspector
-alias ni='node /Users/guanxiongding/Projects/node-inspector/bin/inspector.js --no-preload --save-live-edit --web-port=8088'
+# alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
 
 # will start node inspector with no preload
 alias ni-all='node-inspector --save-live-edit --web-port=8088'
