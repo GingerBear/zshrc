@@ -149,7 +149,7 @@ alias qfe='npm start --url=http://localhost:4000'
 alias node-inspector='node /Users/guanxiongding/Projects/node-inspector/bin/inspector.js'
 
 # will start node inspector
-# alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
+alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
 
 # will start node inspector with no preload
 alias ni-all='node-inspector --save-live-edit --web-port=8088'
