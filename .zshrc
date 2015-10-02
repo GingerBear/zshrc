@@ -146,7 +146,7 @@ alias dfe='node-debug app.js'
 alias qfe='npm start --url=http://localhost:4000'
 
 # will start node inspector
-alias node-inspector='node /Users/guanxiongding/Projects/node-inspector/bin/inspector.js'
+alias node-inspector='node ~/Projects/node-inspector/bin/inspector.js'
 
 # will start node inspector
 alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
@@ -191,12 +191,12 @@ function server() {
 }
 
 # Add facebook flow command to global
-PATH="$PATH:/Users/guanxiongding/Projects/flow/"
+PATH="$PATH:~/Projects/flow/"
 
 # Add extra file into path
-PATH="$PATH:/Users/guanxiongding/Projects/path/"
+PATH="$PATH:~/Projects/path/"
 
 
-export NVM_DIR="/Users/guanxiongding/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
