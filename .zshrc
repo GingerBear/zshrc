@@ -2,15 +2,15 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
+# Look in $HOME/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="bira"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias zshconfig="mate $HOME/.zshrc"
+# alias ohmyzsh="mate $HOME/.oh-my-zsh"
 alias cl="clear"
 alias gs='git status '
 alias ga='git add '
@@ -25,9 +25,9 @@ alias gpo='git push origin '
 alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
 alias gdd='git branch -D '
-alias gpr='~/bin/git-open '
+alias gpr='$HOME/bin/git-open '
 alias chost='st /private/etc/hosts'
-alias zshrc='st ~/.zshrc'
+alias zshrc='st $HOME/.zshrc'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -63,8 +63,8 @@ alias zshrc='st ~/.zshrc'
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Which plugins would you like to load? (plugins can be found in $HOME/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to $HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
 
@@ -91,20 +91,20 @@ export NODE_PATH=/usr/local/lib/node_modules
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="$HOME/.ssh/dsa_id"
 
 
 ### CODE BEING RAN
 
 pj(){
-  cd ~/Projects/"${1:-}"
+  cd $HOME/Projects/"${1:-}"
 }
 
 # Add this below as well:
 # Tell zsh to autocomplete directory names in the same directory as
 # the function's when typing a command based on the shell function.
 
-compctl -/ -W ~/Projects pj
+compctl -/ -W $HOME/Projects pj
 
 checkout() {
     git checkout -b $1
@@ -113,13 +113,13 @@ checkout() {
 
 m() {
     project=$1
-    cd ~/Projects/$project.m
+    cd $HOME/Projects/$project.m
 }
 
 api() {
     project=$1
     start=$2
-    cd ~/Projects/$project.api
+    cd $HOME/Projects/$project.api
     if [[ ! -z $start ]]; then
       git checkout master
       git pull upstream master
@@ -146,7 +146,7 @@ alias dfe='node-debug app.js'
 alias qfe='npm start --url=http://localhost:4000'
 
 # will start node inspector
-alias node-inspector='node ~/Projects/node-inspector/bin/inspector.js'
+alias node-inspector='node $HOME/Projects/node-inspector/bin/inspector.js'
 
 # will start node inspector
 alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
@@ -191,12 +191,12 @@ function server() {
 }
 
 # Add facebook flow command to global
-PATH="$PATH:~/Projects/flow/"
+PATH="$PATH:$HOME/Projects/flow/"
 
 # Add extra file into path
-PATH="$PATH:~/Projects/path/"
+PATH="$PATH:$HOME/Projects/path/"
 
 
-export NVM_DIR="~/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
