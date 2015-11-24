@@ -26,6 +26,7 @@ alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
 alias gdd='git branch -D '
 alias gpr='$HOME/bin/git-open '
+# alias makepr='git push origin HEAD && gpr'
 alias chost='st /private/etc/hosts'
 alias zshrc='st $HOME/.zshrc'
 
@@ -182,6 +183,19 @@ st() {
       dir=.
     fi
     /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $dir
+}
+
+# will open vscode
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+## make pr 
+makepr() {
+  message=$1
+  if [[ -z $message ]]; then
+    git push origin HEAD && gpr
+  else
+    git commit -am $1 && git push origin HEAD && $HOME/bin/git-open
+  fi
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
