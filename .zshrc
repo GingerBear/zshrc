@@ -192,7 +192,7 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 makepr() {
   message=$1
   if [[ -z $message ]]; then
-    git push origin HEAD && gpr
+    git push origin HEAD && $HOME/bin/git-open
   else
     git commit -am $1 && git push origin HEAD && $HOME/bin/git-open
   fi
