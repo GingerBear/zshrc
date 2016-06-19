@@ -128,11 +128,17 @@ api() {
     fi
 }
 
+# will run bb platform project
+alias bbp='node --debug app'
+
 # will run back end
 alias be='node --debug=5859 app -w 0'
 
 # will run front end
 alias fe='node --debug app -w 0 --url http://localhost:4000'
+
+# will run front end
+alias fe-stage='node --debug app -w 0 --url http://localhost:4000 --stage_url http://localhost-stage:4000'
 
 # will run front end in production mode
 alias pfe='NODE_ENV=production node app -w 1 --url http://localhost:4000 -p 3000'
@@ -155,9 +161,6 @@ alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
 # will start node inspector with no preload
 alias ni-all='node-inspector --save-live-edit --web-port=8088'
 
-# will start node inspector and stop at first line
-alias qni='node-inspector --no-preload --save-live-edit --web-port=8088 --debug-brk'
-
 # will run front end nodemon
 alias mfe='nodemon app.js -w 0 --url http://localhost:4000'
 
@@ -173,8 +176,8 @@ alias na='node app'
 # will run node app in production mode
 alias pna='NODE_ENV=production node app'
 
-# check port usage
-alias cp='lsof -i'
+# core demo start
+alias core-demo='SQL_HOST=mysql0-php-prod.in.bbhosted.com SQL_USER=demo_user SQL_PASS=KhsVtgT77DEVzXT3 node --debug app'
 
 # will open sublime text
 st() {
@@ -185,10 +188,7 @@ st() {
     /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $dir
 }
 
-# will open vscode
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
-
-## make pr 
+## make pr
 makepr() {
   message=$1
   if [[ -z $message ]]; then
@@ -210,7 +210,4 @@ PATH="$PATH:$HOME/Projects/flow/"
 # Add extra file into path
 PATH="$PATH:$HOME/Projects/path/"
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
