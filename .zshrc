@@ -25,7 +25,7 @@ alias gpo='git push origin '
 alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
 alias gdd='git branch -D '
-alias gpr='$HOME/bin/git-open '
+alias gpr='git-open '
 # alias makepr='git push origin HEAD && gpr'
 alias chost='st /private/etc/hosts'
 alias zshrc='st $HOME/.zshrc'
@@ -73,7 +73,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:"
+export PATH="$PATH:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export NODE_PATH=/usr/local/lib/node_modules
@@ -211,3 +211,4 @@ PATH="$PATH:$HOME/Projects/flow/"
 PATH="$PATH:$HOME/Projects/path/"
 
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
