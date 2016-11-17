@@ -9,3 +9,14 @@
     { "key": "alt+r",                    "command": "workbench.action.debug.stepOver",
                                         "when": "inDebugMode" }
 ]
+
+
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "typescript.check.tscVersion": false,
+  "window.zoomLevel": 0,
+  "emmet.syntaxProfiles": { "javascript": "html" },
+  "editor.formatOnSave": true
+}
