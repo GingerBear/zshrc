@@ -1,0 +1,11 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    { "key": "shift+cmd+r",                    "command": "workbench.action.debug.start",
+                                        "when": "!inDebugMode" },
+    { "key": "shift+cmd+r",                    "command": "workbench.action.debug.stop",
+                                        "when": "inDebugMode" },
+    { "key": "cmd+r",                    "command": "workbench.action.debug.continue",
+                                        "when": "inDebugMode" },
+    { "key": "alt+r",                    "command": "workbench.action.debug.stepOver",
+                                        "when": "inDebugMode" }
+]
