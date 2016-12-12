@@ -29,6 +29,7 @@ alias gpr='git-open '
 # alias makepr='git push origin HEAD && gpr'
 alias chost='st /private/etc/hosts'
 alias zshrc='st $HOME/.zshrc'
+alias gst='git reset '
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -212,3 +213,5 @@ PATH="$PATH:$HOME/Projects/path/"
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export NVM_DIR="/Users/guanxiongding/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
