@@ -69,6 +69,7 @@ alias gst='git reset '
 # Custom plugins may be added to $HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
+plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
