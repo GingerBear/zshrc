@@ -30,6 +30,7 @@ alias gpr='git-open '
 alias chost='st /private/etc/hosts'
 alias zshrc='st $HOME/.zshrc'
 alias gst='git reset '
+alias xc='open ios/*.xcworkspace'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -216,3 +217,9 @@ PATH="$PATH:$HOME/Projects/path/"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH="$HOME/.fastlane/bin:$PATH"
+
