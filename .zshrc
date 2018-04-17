@@ -19,7 +19,7 @@ alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Cre
 alias gc='git commit'
 alias gca='git commit -am '
 alias gd='git diff'
-alias go='git checkout '
+alias go='git checkout'
 alias gpu='git pull upstream '
 alias gpo='git push origin '
 alias gom='go master && gpu master'
@@ -222,4 +222,5 @@ export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH="$HOME/.fastlane/bin:$PATH"
+export PATH="$HOME/Projects/flutter/bin:$PATH"
 
