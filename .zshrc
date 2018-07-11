@@ -13,7 +13,6 @@ ZSH_THEME="bira"
 # alias ohmyzsh="mate $HOME/.oh-my-zsh"
 alias cl="clear"
 alias gs='git status '
-alias ga='git add '
 alias gb='git branch '
 alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
 alias gc='git commit'
@@ -26,6 +25,7 @@ alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
 alias gdd='git branch -D '
 alias gpr='git-open '
+alias ga='git commit -a --amend --no-edit'
 # alias makepr='git push origin HEAD && gpr'
 alias chost='st /private/etc/hosts'
 alias zshrc='st $HOME/.zshrc'
@@ -223,4 +223,3 @@ export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH="$HOME/.fastlane/bin:$PATH"
 export PATH="$HOME/Projects/flutter/bin:$PATH"
-
