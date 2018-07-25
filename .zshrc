@@ -112,78 +112,6 @@ pj(){
 
 compctl -/ -W $HOME/Projects pj
 
-checkout() {
-    git checkout -b $1
-    git checkout $1
-}
-
-m() {
-    project=$1
-    cd $HOME/Projects/$project.m
-}
-
-api() {
-    project=$1
-    start=$2
-    cd $HOME/Projects/$project.api
-    if [[ ! -z $start ]]; then
-      git checkout master
-      git pull upstream master
-      nodemon app.js --w 1
-    fi
-}
-
-# will run bb platform project
-alias bbp='node --debug app'
-
-# will run back end
-alias be='node --debug=5859 app -w 0'
-
-# will run front end
-alias fe='node --debug app -w 0 --url http://localhost:4000'
-
-# will run front end
-alias fe-stage='node --debug app -w 0 --url http://localhost:4000 --stage_url http://localhost-stage:4000'
-
-# will run front end in production mode
-alias pfe='NODE_ENV=production node app -w 1 --url http://localhost:4000 -p 3000'
-
-# will run new front end
-alias nfe='gulp build && npm start --url=http://localhost:4000'
-
-# will run front end in debuger
-alias dfe='node-debug app.js'
-
-# will run front end quickly
-alias qfe='npm start --url=http://localhost:4000'
-
-# will start node inspector
-alias node-inspector='node $HOME/Projects/node-inspector/bin/inspector.js'
-
-# will start node inspector
-alias ni='node-inspector --no-preload --save-live-edit --web-port=8088'
-
-# will start node inspector with no preload
-alias ni-all='node-inspector --save-live-edit --web-port=8088'
-
-# will run front end nodemon
-alias mfe='nodemon app.js -w 0 --url http://localhost:4000'
-
-# will open front end and run front end
-alias openfe='open http://localhost:3000 && fe'
-
-# will open back end and run back end
-alias openbe='open http://localhost:4000 && be'
-
-# will run node app
-alias na='node app'
-
-# will run node app in production mode
-alias pna='NODE_ENV=production node app'
-
-# core demo start
-alias core-demo='SQL_HOST=mysql0-php-prod.in.bbhosted.com SQL_USER=demo_user SQL_PASS=KhsVtgT77DEVzXT3 node --debug app'
-
 # will open sublime text
 st() {
     dir=$1
@@ -191,22 +119,6 @@ st() {
       dir=.
     fi
     /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $dir
-}
-
-## make pr
-makepr() {
-  message=$1
-  if [[ -z $message ]]; then
-    git push origin HEAD && $HOME/bin/git-open
-  else
-    git commit -am $1 && git push origin HEAD && $HOME/bin/git-open
-  fi
-}
-
-# Start an HTTP server from a directory, optionally specifying the port
-function server() {
-    local port="${1:-8000}"
-    open "http://localhost:${port}/" && python -m SimpleHTTPServer "$port"
 }
 
 # Add facebook flow command to global
