@@ -16,7 +16,7 @@ alias gs='git status '
 alias gb='git branch '
 alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
 alias gc='git commit'
-alias gca='git commit -am '
+alias gfu='git fetch upstream'
 alias gd='git diff'
 alias go='git checkout'
 alias gpu='git pull upstream '
@@ -31,6 +31,8 @@ alias chost='st /private/etc/hosts'
 alias zshrc='st $HOME/.zshrc'
 alias gst='git reset '
 alias xc='open ios/*.xcworkspace'
+alias s='npm start'
+alias gcm='git commit -am "fix conflicts"'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
