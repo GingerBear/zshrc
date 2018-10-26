@@ -32,7 +32,8 @@ alias zshrc='st $HOME/.zshrc'
 alias gst='git reset '
 alias xc='open ios/*.xcworkspace'
 alias s='npm start'
-alias gcm='git commit -am "fix conflicts"'
+alias hg='history | grep'
+alias find-file='find . -print | grep -i'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -121,6 +122,33 @@ st() {
     /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $dir
 }
 
+# git commit and messate 
+gcm() {
+	branch_name=$(git symbolic-ref -q HEAD)
+	branch_name=${branch_name##refs/heads/}
+	branch_name=${branch_name:-HEAD}
+	message=""
+
+    for i; do 
+    	message="$message $i";
+    done
+
+    echo "git add ."
+    git add .
+
+    echo "git commit -am \"$branch_name$message\""
+    git commit -am "$branch_name$message"
+}
+
+# pull down mr 
+mr() {
+    echo "git fetch upstream"
+    git fetch upstream
+
+    echo "git checkout -b $1 origin/$1"
+    git checkout -b $1 origin/$1
+}
+
 # Add facebook flow command to global
 PATH="$PATH:$HOME/Projects/flow/"
 
@@ -137,3 +165,7 @@ export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH="$HOME/.fastlane/bin:$PATH"
 export PATH="$HOME/Projects/flutter/bin:$PATH"
+
+# added by Miniconda2 installer
+export PATH="/Users/neil.ding/miniconda2/bin:$PATH"
+export PATH=~/.local/bin:$PATH
