@@ -142,8 +142,8 @@ gcm() {
 
 # pull down mr 
 mr() {
-    echo "git fetch upstream"
-    git fetch upstream
+    echo "git fetch origin"
+    git fetch origin
 
     echo "git checkout -b $1 origin/$1"
     git checkout -b $1 origin/$1
