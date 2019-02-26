@@ -15,7 +15,7 @@ alias cl="clear"
 alias gs='git status '
 alias gb='git branch '
 alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
-alias gc='git commit'
+# alias gc='git commit'
 alias gfu='git fetch upstream'
 alias gd='git diff'
 alias go='git checkout'
@@ -123,14 +123,29 @@ st() {
 }
 
 # git commit and messate 
-gcm() {
-	branch_name=$(git symbolic-ref -q HEAD)
-	branch_name=${branch_name##refs/heads/}
-	branch_name=${branch_name:-HEAD}
-	message=""
+gc() {
+    message=""
 
     for i; do 
-    	message="$message $i";
+        message="$message $i";
+    done
+
+    #echo "git add ."
+    #git add .
+
+    echo "git commit -am \"$message\""
+    git commit -am "$message"
+}
+
+# git commit and messate 
+gcm() {
+    branch_name=$(git symbolic-ref -q HEAD)
+    branch_name=${branch_name##refs/heads/}
+    branch_name=${branch_name:-HEAD}
+    message=""
+
+    for i; do 
+        message="$message $i";
     done
 
     echo "git add ."
