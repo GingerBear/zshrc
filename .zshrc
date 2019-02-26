@@ -122,7 +122,7 @@ st() {
     /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $dir
 }
 
-# git commit and messate 
+# git commit and message 
 gc() {
     message=""
 
@@ -137,7 +137,7 @@ gc() {
     git commit -am "$message"
 }
 
-# git commit and messate 
+# git commit and message with prefix branch name
 gcm() {
     branch_name=$(git symbolic-ref -q HEAD)
     branch_name=${branch_name##refs/heads/}
