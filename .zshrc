@@ -73,7 +73,12 @@ alias find-file='find . -print | grep -i'
 # Custom plugins may be added to $HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
-plugins=(zsh-autosuggestions)
+plugins=(
+    zsh-autosuggestions
+    history
+    zsh-syntax-highlighting
+    colored-man-pages
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -184,3 +189,4 @@ export PATH="$HOME/Projects/flutter/bin:$PATH"
 # added by Miniconda2 installer
 export PATH="/Users/neil.ding/miniconda2/bin:$PATH"
 export PATH=~/.local/bin:$PATH
+export PATH="$PATH:/usr/local/smlnj/bin"
