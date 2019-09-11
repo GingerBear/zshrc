@@ -131,15 +131,14 @@ st() {
 gc() {
     message=""
 
-    for i; do 
-        message="$message $i";
+    for i; do
+      message="$message $i";
     done
 
-    #echo "git add ."
-    #git add .
+    message_trimed="$(echo -e "${message}" | sed -e 's/^[[:space:]]*//')"
 
-    echo "git commit -am \"$message\""
-    git commit -am "$message"
+    echo "git commit -am \"$message_trimed\""
+    git commit -am "$message_trimed"
 }
 
 # git commit and message with prefix branch name
