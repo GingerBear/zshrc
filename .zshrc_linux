@@ -13,21 +13,27 @@ ZSH_THEME="bira"
 # alias ohmyzsh="mate $HOME/.oh-my-zsh"
 alias cl="clear"
 alias gs='git status '
-alias ga='git add '
 alias gb='git branch '
 alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
-alias gc='git commit'
-alias gca='git commit -am '
+# alias gc='git commit'
+alias gfu='git fetch upstream'
 alias gd='git diff'
-alias go='git checkout '
+alias go='git checkout'
 alias gpu='git pull upstream '
 alias gpo='git push origin '
 alias gom='go master && gpu master'
 alias gob='go master && gpu master && go -b '
-alias gdd='git branch -D '
+alias gdd='go master && git branch -D '
 alias gpr='git-open '
+alias ga='git commit -a --amend --no-edit'
+# alias makepr='git push origin HEAD && gpr'
 alias chost='st /private/etc/hosts'
 alias zshrc='st $HOME/.zshrc'
+alias gst='git reset '
+alias xc='open ios/*.xcworkspace'
+alias s='npm start'
+alias hg='history | grep'
+alias find-file='find . -print | grep -i'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -67,20 +73,50 @@ alias zshrc='st $HOME/.zshrc'
 # Custom plugins may be added to $HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
+plugins=(
+    zsh-autosuggestions
+    history
+    zsh-syntax-highlighting
+    colored-man-pages
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export PATH="$PATH:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+export NODE_PATH=/usr/local/lib/node_modules
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="$HOME/.ssh/dsa_id"
+
+
+### CODE BEING RAN
+
+pj(){
+  cd $HOME/Projects/"${1:-}"
+}
+
 # Add this below as well:
 # Tell zsh to autocomplete directory names in the same directory as
 # the function's when typing a command based on the shell function.
 
-compctl -/ -W $HOME/projects pj
-
-pj(){
-  cd $HOME/projects/"${1:-}"
-}
+compctl -/ -W $HOME/Projects pj
 
 # will open sublime text
 st() {
@@ -88,5 +124,47 @@ st() {
     if [[ -z $dir ]]; then
       dir=.
     fi
-    /opt/sublime_text/sublime_text $dir
+    /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $dir
 }
+
+# git commit and message 
+gc() {
+    message=""
+
+    for i; do
+      message="$message $i";
+    done
+
+    message_trimed="$(echo -e "${message}" | sed -e 's/^[[:space:]]*//')"
+
+    echo "git commit -am \"$message_trimed\""
+    git commit -am "$message_trimed"
+}
+
+# git commit and message with prefix branch name
+gcm() {
+    branch_name=$(git symbolic-ref -q HEAD)
+    branch_name=${branch_name##refs/heads/}
+    branch_name=${branch_name:-HEAD}
+    message=""
+
+    for i; do 
+        message="$message $i";
+    done
+
+    echo "git add ."
+    git add .
+
+    echo "git commit -am \"$branch_name$message\""
+    git commit -am "$branch_name$message"
+}
+
+# pull down mr 
+mr() {
+    echo "git fetch origin"
+    git fetch origin
+
+    echo "git checkout -b $1 origin/$1"
+    git checkout -b $1 origin/$1
+}
+
