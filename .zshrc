@@ -74,13 +74,13 @@ alias find-file='find . -print | grep -i'
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git)
 plugins=(
+    git
     zsh-autosuggestions
-    history
-    zsh-syntax-highlighting
-    colored-man-pages
+    fast-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
+source <(fzf --zsh)
 
 # User configuration
 
